@@ -1,0 +1,35 @@
+version: '3'
+volumes:
+  data:
+networks:
+  web:
+services:
+  frontend:
+    image: nginx:1.13
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8080:80
+    networks:
+      - web
+    depends_on:
+      - services
+      - app
+  services:
+    image: node:9.2.0
+    volumes:
+      - ./arij-services:/app
+    working_dir: /app
+    command: bash ./start.sh
+    networks:
+      - web
+  app:
+    image: node:9.2.0
+    volumes:
+      - ./arij-web:/app
+    working_dir: /app
+    command: bash ./start.sh
+    networks:
+      - web
+    depends_on:
+      - services
