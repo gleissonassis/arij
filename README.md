@@ -2,7 +2,7 @@
 
 ## About
 
-This software is a issue monitor built for managing SLA for my team. Maybe it will not be
+This software is an issue monitor built for managing SLA for my team. Maybe it will not be
 useful for you, but is a simple example of Docker+Node+Nginx+Vue. You can check this out to find
 something interesting about these technologies.
 
