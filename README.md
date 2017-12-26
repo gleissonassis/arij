@@ -37,4 +37,4 @@ dockercompose up
 ```
 
 By default the app will be running at http://localhost:8080, but you change it by editing
-docker-compose.yml
+docker-compose.yml.
